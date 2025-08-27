@@ -32,6 +32,7 @@
 #  The fact that you are presently reading this means that you have had
 #  knowledge of the CeCILL-C license and that you accept its terms.
 
+import os
 import sys
 sys.path.insert(0, '../../..')
 from torch.optim import Adam
@@ -76,7 +77,7 @@ parser.add_argument('--config',  '-c',
 
 parser.add_argument('--data_root', '-d',
                     dest="data_root",
-                    default='c:/myDatasets/VAN')
+                    default='../../../Datasets')
 
 parser.add_argument('--test', '-t',
                     dest="test",
@@ -105,14 +106,9 @@ with open(args.filename, 'r', encoding='utf-8') as file:
     except yaml.YAMLError as exc:
         print(exc)
 
-# data_root = '../../../Datasets'
-# data_root = 'c:/myDatasets/VAN'
-# 服务器上用这个
-# data_root = '../../../../VAN-data'
 
 data_root = args.data_root
 
-import os
 
 if __name__ == '__main__':
     dataset_name = params['dataset_params']['name']

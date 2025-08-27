@@ -8,7 +8,6 @@ from basic.utils import remove_successive_spaces_bo, strip_bo, edit_ser_from_lis
 from Loss.composite_ctc import Composite_CTC
 from OCR.document_OCR.comp_ctc.models_pg_cc import DecoderH
 from basic.line_match import match_lines
-from visulization.visualize import visualize_pred
 import os
 
 """Training manager for composite-CTC loss"""
