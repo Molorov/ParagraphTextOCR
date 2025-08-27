@@ -110,7 +110,10 @@ if __name__ == "__main__":
 - This will generate well-formated datasets, usable by the training scripts.
 
 ## BJK-185 & LJK-200
-The BJK-185 and 
+BJK-185 corresponds to the Beijing edition of Kangyur, it is a dataset consists of woodblock printed Tibetan historical documents.
+The formatted dataset is available at [here]().
+LJK-200 corrresponds to the Lijiang edition of Kangyur.
+The formatted dataset is available at [here](https://pan.baidu.com/s/1nG6u3yTrJADcwWvtnWp6Jw?pwd=965p) with access code: 965p
 
 
 ## Training And Evaluation
