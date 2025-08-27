@@ -134,8 +134,19 @@ Training can use apex package for mix-precision and Distributed Data Parallel fo
 - The following command is used to evaluate the model after the training is complete:
   
   python main_pg_cc.py --config ../../../config_cc/#ConfigName.yaml --test --line_match
+  where the "line_match" argument is optional.
+
+Note that when training on the Tibetan datasets, it is necessary to first pre-train the model without syllable points, since these are often poorly labeled and tend to hinder convergence.
+
+- For exmaple, one need to first run the pretraining configuration:
+  
+  python main_pg_cc.py --config ../../../config_cc/BJK_185+nosp.yaml
+  
+- After the pretraining is complete, then run the configuration:
+
+  python main_pg_cc.py --config ../../../config_cc/BJK_185.yaml
+
     
- 
 ## Citation
 
 ```bibtex
