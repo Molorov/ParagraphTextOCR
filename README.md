@@ -15,7 +15,7 @@ and the following results for Tibetan documents at the main-text area:
 |  BJK-185     | 3.13 | 7.33 |
 |  LJK-200     | 1.91 | 4.48 |
 
-Pretrained model weights are available [here](https://git.litislab.fr/dcoquenet/VerticalAttentionNetwork) and [here](https://zenodo.org/record/7244431).
+Pretrained model weights are available [here](https://zenodo.org/records/16956903).
 
 Table of contents:
 1. [Getting Started](#Getting-Started)
