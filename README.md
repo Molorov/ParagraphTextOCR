@@ -100,7 +100,7 @@ if __name__ == "__main__":
 
 - This will generate well-formated datasets, usable by the training scripts.
 
-## BJK-185 & LJK-200
+### BJK-185 & LJK-200
 
 BJK-185 corresponds to the Beijing edition of Kangyur, while the LJK-200 corrresponds to the Lijiang edition of Kangyur. They both are
 datasets consists of woodblock printed Tibetan historical documents.
@@ -128,21 +128,23 @@ The outputs files are split into two subfolders: "checkpoints" and "results". "c
 Training can use apex package for mix-precision and Distributed Data Parallel for usage on multiple GPU.
 
 - The following command is used to train the model with corresponding configuration:
+  
   python main_pg_cc.py --config ../../../config_cc/#ConfigName.yaml
 
 - The following command is used to evaluate the model after the training is complete:
-  python main_pg_cc.py --config ../../../config_cc/#ConfigName.yaml --test
+  
+  python main_pg_cc.py --config ../../../config_cc/#ConfigName.yaml --test --line_match
+    
  
-
 ## Citation
 
 ```bibtex
-@ARTICLE{Coquenet2022,
-    author={Coquenet, Denis and Chatelain, Clement and Paquet, Thierry},
-    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-    title={End-to-end Handwritten Paragraph Text Recognition Using a Vertical Attention Network},
-    year={2022},
-    doi={10.1109/TPAMI.2022.3144899}
+@ARTICLE{Mao2025,
+    author={Mao, Leer and Wang, Weilan and Li, Qiaoqiao},
+    journal={Pattern Recognition},
+    title={Composite-CTC for Full-page Handwritten Text Recognition: Non-autoregressive, Minimal Supervision, and Lightweight},
+    year={2025},
+    doi={}
 }
 ```
 
