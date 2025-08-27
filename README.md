@@ -8,6 +8,13 @@ We obtained the following results at paragraph level:
 |      IAM     | 4.55 | 15.32 |
 |   READ2016   | 3.94 | 16.06 |
 
+and the following results for Tibetan documents at the main-text area:
+
+|  Dataset  |  cer |  ser  |
+|:------------:|:----:|:-----:|
+|  BJK-185     | 3.13 | 7.33 |
+|  LJK-200     | 1.91 | 4.48 |
+
 Pretrained model weights are available [here](https://git.litislab.fr/dcoquenet/VerticalAttentionNetwork) and [here](https://zenodo.org/record/7244431).
 
 Table of contents:
