@@ -23,18 +23,18 @@ Table of contents:
 3. [Training And Evaluation](#Training-and-evaluation)
 
 ## Getting Started
-Implementation has been tested with Python 3.6.
+Implementation has been tested with Python 3.8.
 
 Clone the repository:
 
 ```
-git clone https://github.com/FactoDeepLearning/VerticalAttentionOCR.git
+git clone https://github.com/Molorov/ParagraphTextOCR.git
 ```
 
 Install the dependencies:
 
 ```
-pip install -r requirements.txt
+conda env create -f environment.yml
 ```
 
 
@@ -47,16 +47,14 @@ for experiment replication purposes.
 #### Details
 
 IAM corresponds to english grayscale handwriting images (from the LOB corpus).
-We provide a script to format this dataset for the commonly used split for result comparison purposes.
+The formatting script is provided by Denis Coquenet at [here]()
 The different splits are as follow:
 
 |           | train | validation |  test |
 |:---------:|:-----:|:----------:|:-----:|
-|    line   | 6,482 |     976    | 2,915 |
 | paragraph |  747  |     116    |  336  |
 
 #### Download
-
 
 
 - Register at the [FKI's webpage](https://fki.tic.heia-fr.ch/databases/iam-handwriting-database)
