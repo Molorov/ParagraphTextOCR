@@ -42,7 +42,7 @@ import numpy as np
 import torch
 from PIL import Image
 import cv2
-from myUtils.Tibetan import string2char_list
+# from myUtils.Tibetan import string2char_list
 
 
 def format_IAM_line():
