@@ -47,7 +47,7 @@ for experiment replication purposes.
 #### Details
 
 IAM corresponds to english grayscale handwriting images (from the LOB corpus).
-The formatting script is provided by Denis Coquenet at [here]()
+The formatting script is provided by Denis Coquenet at [here](https://github.com/FactoDeepLearning/VerticalAttentionOCR)
 The different splits are as follow:
 
 |           | train | validation |  test |
@@ -66,36 +66,11 @@ The different splits are as follow:
     - lines.tgz
     - ascii.tgz
 
-
-
-### RIMES
-
-#### Details
-
-RIMES corresponds to french grayscale handwriting images.
-We provide a script to format this dataset for the commonly used split for result comparison purposes.
-The different splits are as follow:
-
-|           | train | validation |  test |
-|:---------:|:-----:|:----------:|:-----:|
-|    line   | 9,947 |     1,333  | 778 |
-| paragraph |  1400 |     100    |  100 |
-
-#### Download
-
-- Fill in the a2ia user agreement form available [here](http://www.a2ialab.com/doku.php?id=rimes_database:start) and send it by email to rimesnda@a2ia.com. You will receive by mail a username and a password
-- Login in and download the data from [here](http://www.a2ialab.com/doku.php?id=rimes_database:data:icdar2011:line:icdar2011competitionline)
-- Move the following files into the folder Datasets/raw/RIMES/
-    - eval_2011_annotated.xml
-    - eval_2011_gray.tar
-    - training_2011_gray.tar
-    - training_2011.xml
-
 ### READ 2016
 
 #### Details
 READ 2016 corresponds to Early Modern German RGB handwriting images.
-We provide a script to format this dataset for the commonly used split for result comparison purposes.
+The formatting script is provided by Denis Coquenet at [here](https://github.com/FactoDeepLearning/VerticalAttentionOCR)
 The different splits are as follow:
 
 |           | train | validation |  test |
@@ -133,6 +108,9 @@ if __name__ == "__main__":
 ```
 
 - This will generate well-formated datasets, usable by the training scripts.
+
+## BJK-185 & LJK-200
+The BJK-185 and 
 
 
 ## Training And Evaluation
