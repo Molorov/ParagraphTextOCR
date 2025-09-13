@@ -16,18 +16,19 @@ model_params:
       pool_method: 'avg'
       kaiming_init: False
   transfer_learning:  # empty value means None
-    encoder: [ "encoder", "../../document_OCR/comp_ctc/outputs/LJK_200+pretrain/checkpoints/last_1999.pt", True, True ]
-    attention: [ "attention", "../../document_OCR/comp_ctc/outputs/LJK_200+pretrain/checkpoints/last_1999.pt", True, True ]
-    decoder: [ "decoder", "../../document_OCR/comp_ctc/outputs/LJK_200+pretrain/checkpoints/last_1999.pt", True, True ]
   save_ema: True
   input_channels: 3 # 1 for grayscale images, 3 for RGB ones (or grayscale as RGB)
   features_size: 256  # encoder output features maps
   comp_ctc:
     line_repeat: False
     trunc_height: False
+  dropout_scheduler:
+    function: 'linear_dropout_scheduler'
+    T: 40000  # 4e4
+    start: 40000 #4e4
 
 dataset_params:
-  name: 'LJK_200'
+  name: 'BJK_185'
   dataset_class: 'OCRDataset'
   config:
     width_divisor: 8  # Image width will be divided by 8
@@ -36,7 +37,7 @@ dataset_params:
     padding_token:   # Label padding value (None: default value is chosen)
     charset_mode: "CTC"  # add blank token
     constraints: [ "padding", "CTC_va" ]  # Padding for models constraints and CTC requirements
-    exclude_chars: [' '] # exclude all spaces and syllable points
+    exclude_chars: [' ', '་'] # exclude all spaces and syllable points
     padding:
       min_height: 480  # to handle model requirements (AdaptivePooling)
       min_width: 800  # to handle model requirements (AdaptivePooling)
@@ -45,7 +46,7 @@ dataset_params:
       [
         {
           type: "dpi",  # modify image resolution
-          source: 75,  # from 75 dpi
+          source: 300,  # from 300 dpi
           target: 150,  # to 150 dpi
         },
         {
@@ -117,4 +118,4 @@ training_params:
     train_metrics: ["loss_ctc", "cer", "wer", "coer", "diff_len"]  # Metrics name for training
     eval_metrics: ["loss_ctc", "cer", "wer", "coer", "diff_len"]  # Metrics name for evaluation on validation set during training
     force_cpu: False  # True for debug purposes to run on cpu only
-    stop_mode: None
+    stop_mode: None  # ["fixed", "early", "learned"]
