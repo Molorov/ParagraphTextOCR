@@ -1,4 +1,4 @@
-# Composite-CTC: a fully convolutional network for end-to-end paragraph handwritten text recognition
+# Composite-CTC: a fully convolutional network for end-to-end multi-line handwritten text recognition
 This repository is a public implementation of the paper: "Composite-CTC for Full-page Handwritten Text Recognition: Non-autoregressive, Minimal Supervision, and Lightweight"
 It focuses on the recognition of handwritten documents on full-page/paragraph level.
 We obtained the following results at paragraph level:
@@ -34,7 +34,7 @@ git clone https://github.com/Molorov/ParagraphTextOCR.git
 Install the dependencies:
 
 ```
-conda env create -f environment.yml
+pip install -r requirements.txt
 ```
 
 
@@ -141,7 +141,7 @@ Note that when training on the Tibetan datasets, it is necessary to first pre-tr
 
 - For exmaple, one need to first run the pretraining configuration:
   
-  python main_pg_cc.py --config ../../../config_cc/BJK_185+nosp.yaml
+  python main_pg_cc.py --config ../../../config_cc/BJK_185+pretrain.yaml
   
 - After the pretraining is complete, then run the configuration:
 
