@@ -1,15 +1,19 @@
 model_params:
   models:
-    encoder: 'FCN_Encoder'
-    decoder: 'Decoder'
-  transfer_learning:  # empty value means None
-    encoder: [ "encoder", "../../line_OCR/ctc/outputs/LJK_200_line+pretrain/checkpoints/best_1988.pt", True, True ]
-    decoder: [ "decoder", "../../line_OCR/ctc/outputs/LJK_200_line+pretrain/checkpoints/best_1988.pt", True, True ]
+    encoder:
+      name: 'FCN_Encoder'
+      dropout: 0.5
+      norm: 'in'
+      kaiming_init: True
+    decoder:
+      name: 'Decoder'
+      kaiming_init: True
+  transfer_learning: # empty value means None
   input_channels: 3 # 1 for grayscale images, 3 for RGB ones (or grayscale as RGB)
-  dropout: 0.5
+
 
 dataset_params:
-  name: 'LJK_200'
+  name: 'BJK_185'
   dataset_class: 'OCRDataset'
   config:
     width_divisor: 8  # Image width will be divided by 8
@@ -18,12 +22,12 @@ dataset_params:
     padding_token: 1000  # Label padding value (None: default value is chosen)
     charset_mode: "CTC"  # add blank token
     constraints: [ "CTC_line" ]  # Padding for CTC requirements if necessary
-    exclude_chars: [' '] # exclude all spaces
+    exclude_chars: [' '] # exclude all spaces and syllable points
     preprocessings:
       [
         {
           type: "dpi",  # modify image resolution
-          source: 75,  # from 75 dpi
+          source: 300,  # from 300 dpi
           target: 150,  # to 150 dpi
         },
         {
@@ -89,6 +93,6 @@ training_params:
   eval_on_valid_interval: 2  # Interval (in epochs) to evaluate during training
   focus_metric: "cer"  # Metrics to focus on to determine best epoch
   expected_metric_value: "low"  # ["high", "low"] What is best for the focus metric value
-  train_metrics: [ "loss_ctc", "cer", 'coer', "wer"]  # Metrics name for training
-  eval_metrics: [ "loss_ctc", "cer", 'coer', "wer"]  # Metrics name for evaluation on validation set during training
+  train_metrics: [ "loss_ctc", "cer", "wer", 'coer']  # Metrics name for training
+  eval_metrics: [ "loss_ctc", "cer", "wer", 'coer']  # Metrics name for evaluation on validation set during training
   force_cpu: False  # True for debug purposes to run on cpu only

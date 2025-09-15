@@ -9,8 +9,8 @@ model_params:
       name: 'Decoder'
       kaiming_init: True
   transfer_learning: # empty value means None
-    encoder: [ "encoder", "../../line_OCR/ctc/outputs/BJK_185_line+pretrain/checkpoints/best_1768.pt", True, True]
-    decoder: [ "decoder", "../../line_OCR/ctc/outputs/BJK_185_line+pretrain/checkpoints/best_1768.pt", True, True]
+    encoder: [ "encoder", "../../line_OCR/ctc/outputs/BJK_185_line+pretrain/checkpoints/best_1924.pt", True, True]
+    decoder: [ "decoder", "../../line_OCR/ctc/outputs/BJK_185_line+pretrain/checkpoints/best_1924.pt", True, True]
   input_channels: 3 # 1 for grayscale images, 3 for RGB ones (or grayscale as RGB)
 
 
@@ -85,7 +85,7 @@ training_params:
   interval_save_weights:   # None: keep best and last only
   use_ddp: False  # Use DistributedDataParallel
   use_apex: True  # Enable mix-precision with apex package
-  batch_size: 15  # mini-batch size per GPU
+  batch_size: 16  # mini-batch size per GPU
   optimizer:
     class: 'Adam'
     args:
