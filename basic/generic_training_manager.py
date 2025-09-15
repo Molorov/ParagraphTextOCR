@@ -270,7 +270,7 @@ class GenericTrainingManager:
             for model_key in self.models.keys():
                 kaiming_init = self.params["model_params"]['models'][model_key].get('kaiming_init', False)
                 if kaiming_init:
-                    self.models[model_name].apply(self.weights_init)
+                    self.models[model_key].apply(self.weights_init)
 
             # Handle transfer learning instructions
             if self.params["model_params"]["transfer_learning"]:
