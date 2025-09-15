@@ -68,14 +68,14 @@ def train_and_test(rank, params, test, load_epoch, line_match, visualize):
 import argparse
 import yaml
 
-parser = argparse.ArgumentParser(description='Generic runner for myVAEs')
+parser = argparse.ArgumentParser(description='Generic runner')
 
 parser.add_argument('--config',  '-c',
                     dest="filename",
                     metavar='FILE',
                     help = 'path to the config file')
 
-parser.add_argument('--data_root', '-d',
+parser.add_argument('--data', '-d',
                     dest="data_root",
                     default='../../../Datasets')
 
