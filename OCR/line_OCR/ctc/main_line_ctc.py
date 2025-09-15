@@ -90,7 +90,7 @@ def train_and_test(rank, params, test):
 
 
 
-parser = argparse.ArgumentParser(description='Generic runner for myVAEs')
+parser = argparse.ArgumentParser(description='Generic runner for CTC')
 
 parser.add_argument('--config',  '-c',
                     dest="filename",
